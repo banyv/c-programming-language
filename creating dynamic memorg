@@ -1,0 +1,21 @@
+//申请动态内存
+
+#include<stdio.h>
+#include<stdlib.h>    
+int main()
+{
+	int *p=(int *)malloc(sizeof(int)*10);     //申请40个字节的动态内存 
+    
+	for(int i=0;i<10;i++)
+	{
+		p[i]=i;
+	}
+	
+	for(int i=0;i<10;i++)
+	{
+		printf("%d\n",p[i]);
+	}
+	free(p);
+	p=NULL;//防止后边的程序再用到
+	return 0; 
+}

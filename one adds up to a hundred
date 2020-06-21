@@ -1,0 +1,14 @@
+#include  <stdio.h>
+
+int main(void)
+
+{
+
+    int i=0;    
+    int sum=0;     //两个变量赋初值 
+    for( i=1; i<=100; i++) //for循环使i每次加1 
+    sum+=i;                 //i每次加1的值赋给sum 
+    printf("1加到100的和为:%d\n",sum);  //以整形输出sum的值 
+    return 0;
+
+ } 

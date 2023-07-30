@@ -1,3 +1,4 @@
+ //猜数字游戏
 
 #include <stdio.h>
 #include<stdlib.h>
@@ -12,10 +13,21 @@ void game(){
     //拿时间戳来设置生成数的起点
     //time_t  time(time_t *timer)
     int ret=0;
+    int guess=0;
     srand((unsigned int) time(NULL));//将时间戳转换成int类型 用time来调用
-    ret=rand();
-    printf("%d\n",ret);
-
+    ret=rand()%100+1;//从1到100取随机数
+    while(1) {
+        printf("请猜猜数字");
+        scanf("%d",&guess);
+        if(guess>ret){
+            printf("猜大了");
+        }else if(guess<ret){
+            printf("猜小了");
+        }else{
+            printf("恭喜你猜对了");
+            break;
+        }
+    }
 }
 int main(){
     do{

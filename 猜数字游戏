@@ -1,0 +1,39 @@
+
+#include <stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int input;
+void menu(){
+    printf("***************************\n");
+    printf("欢迎游玩游戏 摁1 游玩  摁0 退出\n");
+    printf("***************************\n ");
+}
+void game(){
+    //拿时间戳来设置生成数的起点
+    //time_t  time(time_t *timer)
+    int ret=0;
+    srand((unsigned int) time(NULL));//将时间戳转换成int类型 用time来调用
+    ret=rand();
+    printf("%d\n",ret);
+
+}
+int main(){
+    do{
+        menu();
+        printf("请选择\n");
+        scanf("%d",&input);
+        switch (input) {
+            case 1:
+                game();//猜数字游戏;
+                break;
+            case 0:
+                printf("退出游戏");
+                break;
+            default:
+                break;
+        }
+    }
+    while(input);
+
+    return 0;
+}
